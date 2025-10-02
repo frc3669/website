@@ -1,7 +1,6 @@
 body {
-  font-family: "Lato", sans-serif;
   color: #bbbbbb;
-  background-color: #171717;
+  background-color: #111111;
 }
 
 .image {
@@ -10,23 +9,27 @@ body {
 }
 
 /* Fixed sidenav, full height */
-.sidenav {
-  height: 100%;
-  width: 200px;
+#sidenav {
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  bottom: 0;
+  background-color: #111111;
   overflow-x: hidden;
+  overflow-y: auto;
   padding-top: 20px;
+  transition: all 0.3s ease-in-out;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
 }
 
 /* Style the sidenav links and the dropdown button */
-.sidenav button, .dropdown-btn {
+#sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
   color: #aaaaaa;
   display: block;
   border: none;
@@ -35,19 +38,29 @@ body {
   text-align: left;
   cursor: pointer;
   outline: none;
+  transition: all 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 
 /* On mouse-over */
-.sidenav button:hover, .dropdown-btn:hover {
+#sidenav a:hover, .dropdown-btn:hover {
   color: #f1f1f1;
 }
 
 /* Main content */
 #main {
+  position: fixed;
+  top: 60px;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
   font-family: "Merriweather";
-  margin-left: 200px; /* Same as the width of the sidenav */
+  margin-left: 250px; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  padding: 0 10px;
+  background-color: #171717;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
 }
 
 /* Add an active class to the active dropdown button */
@@ -56,24 +69,78 @@ button.active {
   color: white;
 }
 
+section {
+  display: none;
+}
+
+section:target {
+  display: block;
+}
+
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
-  display: none;
-  background-color: #202020;
+  overflow: hidden;
+  max-height: 0;
+  background-color: #111111;
   padding-left: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Optional: Style the caret down icon */
-.nf-fa-plus_square_o, .nf-fa-minus_square_o {
+.dropdown-icon {
   float: left;
   padding-right: 7px;
   padding-top: 5px;
-  font-size: 8pt;
   color: #656565;
 }
 
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.dropdown-icon polyline {
+  stroke: rgba(200, 200, 200, 0.8);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transform-origin: 8px 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu-btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  left: 250px;
+  top: 0;
+  background-color: transparent;
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: rgb(150, 150, 150);
+  transition: all 0.3s ease-in-out;
+}
+
+#menu-btn:hover {
+  cursor: pointer;
+}
+
+#menu-btn line {
+  stroke: rgba(200, 200, 200);
+  stroke-width: 4;
+  stroke-linecap: round;
+  fill: none;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 700px) {
+  #sidenav {
+    width: 0;
+  }
+  div#main {
+    margin-left: 0px;
+  }
+  div#menu-btn {
+    left: 0;
+  }
 }

@@ -8,20 +8,60 @@
     <title>team 3669 the CarbonKnights</title>
 </head>
 <body>
-<div class="sidenav">
-  <button type="button" onclick="goHome()" id="home_button"><i class="nf nf-md-home"></i> Home</a>
-  <button type="button" onclick="goRobots()">Robots</a>
-  <button class="dropdown-btn"><i class="nf nf-fa-plus_square_o"></i>Learning Resources</button>
+<div id="sidenav">
+  <a href="#Home" id="home_link"><i class="nf nf-md-home"></i> Home</a>
+  <a href="#Robots">Robots</a>
+  <button class="dropdown-btn">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="dropdown-icon"
+        viewBox="1 1 14 14"
+        width="13" height="13">
+      <polyline points=
+        "
+          5.5 3
+          10.5 8
+          5.5 13
+        "
+      />
+    </svg>
+    Learning Resources
+  </button>
   <div class="dropdown-container">
-    <button type="button" onclick="goCAD()">CAD</a>
-    <button type="button" onclick="goProgramming()">Programming</a>
-    <button type="button" onclick="goWiring()">Wiring</a>
+    <a href="#CAD">CAD</a>
+    <a href="#Programming">Programming</a>
+    <a href="#Wiring">Wiring</a>
   </div>
 </div>
 
+<div id="menu-btn" onclick="toggleNav()">
+  <svg width="25" height="25"
+      viewBox="0 0 20 20">
+    <line x1="3" y1="3" x2="17" y2="3" />
+    <line x1="3" y1="10" x2="17" y2="10" />
+    <line x1="3" y1="17" x2="17" y2="17" />
+  </svg>
+</div>
+
 <div id="main">
-  <h1>FRC team 3669<br></h1>
-  <h2>the CarbonKnights</h2>
+  <section id="Home">
+    <h1>FRC team 3669<br></h1>
+    <h2>the CarbonKnights</h2>
+  </section>
+  <section id="Robots">
+    <h1>Robots</h1>
+    <h2>Twitchy (2025)</h2>
+    <img src="Twitchy.jpg" class="image">
+  </section>
+  <section id="CAD">
+    <h2>CAD (Computer Aided Design)</h2>
+  </section>
+  <section id="Programming">
+    <h2>Robot Programming</h2>
+  </section>
+  <section id="Wiring">
+    <h2>Robot Wiring</h2>
+  </section>
 </div>
 <script src="main.js"></script>
 </body>

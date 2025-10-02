@@ -1,44 +1,21 @@
 function openNav() {
-    document.getElementById("menu").style.width = "250px";
+    document.getElementById("sidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("menu-btn").style.left = "250px"
 }
 
 function closeNav() {
-    document.getElementById("menu").style.width = "0";
+    document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("menu-btn").style.left = "0px"
 }
 
-function goHome() {
-  document.getElementById("main").innerHTML = `
-    <h1>FRC team 3669<br></h1>
-    <h2>the CarbonKnights</h2>
-  `;
-}
-
-function goRobots() {
-  document.getElementById("main").innerHTML = `
-    <h1>Robots</h1>
-    <h2>Twitchy (2025)</h2>
-    <img src="Twitchy.jpg" class="image">
-  `;
-}
-
-function goCAD() {
-  document.getElementById("main").innerHTML = `
-    <h2>CAD (Computer Aided Design)</h2>
-  `;
-}
-
-function goProgramming() {
-  document.getElementById("main").innerHTML = `
-    <h2>Robot Programming</h2>
-  `;
-}
-
-function goWiring() {
-  document.getElementById("main").innerHTML = `
-    <h2>Robot Wiring</h2>
-  `;
+function toggleNav() {
+  if (document.getElementById("sidenav").style.width === "0px") {
+    openNav();
+  } else {
+    closeNav();
+  }
 }
 
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
@@ -49,12 +26,17 @@ for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-      this.innerHTML = this.innerHTML.replace("nf nf-fa-minus_square_o", "nf nf-fa-plus_square_o");
+    if (dropdownContent.style.maxHeight) {
+      dropdownContent.style.maxHeight = null;
+      dropdownContent.style.backgroundColor = "#111111";
+      this.getElementsByClassName("dropdown-icon")[0].getElementsByTagName("polyline")[0].style.transform = "rotate(0deg)";
     } else {
-      dropdownContent.style.display = "block";
-      this.innerHTML = this.innerHTML.replace("nf nf-fa-plus_square_o", "nf nf-fa-minus_square_o");
+      dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+      dropdownContent.style.backgroundColor = "#202020";
+      this.getElementsByClassName("dropdown-icon")[0].getElementsByTagName("polyline")[0].style.transform = "rotate(90deg)";
     }
   });
 }
+
+// makes sure that the Home section is displayed by default
+window.location.hash = "#Home";
