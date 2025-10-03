@@ -14,7 +14,7 @@ function closeNav() {
 }
 
 function toggleNav() {
-  if (document.getElementById("sidenav").style.width === "0px") {
+  if (document.getElementById("sidenav").style.width === "0px" || document.getElementById("sidenav").style.width === "") {
     openNav();
   } else {
     closeNav();
