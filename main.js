@@ -1,13 +1,11 @@
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("menu-btn").style.left = "250px"
 }
 
 function closeNav() {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
-    document.getElementById("menu-btn").style.left = "0px"
 }
 
 function toggleNav() {

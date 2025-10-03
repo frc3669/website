@@ -1,6 +1,6 @@
 body {
   color: #bbbbbb;
-  background-color: #111111;
+  background-color: rgb(17, 17, 17);
 }
 
 .image {
@@ -13,7 +13,7 @@ body {
   width: 250px;
   position: fixed;
   z-index: 1;
-  top: 0;
+  top: 60px;
   left: 0;
   bottom: 0;
   background-color: rgba(17, 17, 17, 1);
@@ -23,6 +23,36 @@ body {
   transition: all 0.3s ease-in-out;
   font-family: "Lato", sans-serif;
   font-size: 20px;
+  border-width: 0 1px 0 0;
+  border-color: rgba(200,200,200,1);
+}
+
+/* Fixed sidenav, full height */
+#header {
+  height: 60px;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#header a {
+  color: #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Merriweather";
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  padding: none;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -61,6 +91,18 @@ body {
   background-color: #171717;
   transition: all 0.3s ease-in-out;
   overflow-y: auto;
+}
+
+#home-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#ck-icon {
+  width: 40px;
+  height: 40px;
+  float: left;
+  padding-right: 5px;
 }
 
 /* Add an active class to the active dropdown button */
@@ -112,8 +154,8 @@ section:target {
   align-items: center;
   position: fixed;
   z-index: 2;
-  left: 250px;
-  top: 0;
+  left: 0px;
+  top: 0px;
   background-color: transparent;
   border-radius: 7px;
   border-width: 1px;
@@ -139,8 +181,5 @@ section:target {
   }
   div#main {
     margin-left: 0px;
-  }
-  div#menu-btn {
-    left: 0;
   }
 }
