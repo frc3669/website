@@ -97,6 +97,11 @@ body {
   background-color: #171717;
   transition: all 0.3s ease-in-out;
   overflow-y: auto;
+  overflow-x: auto;
+}
+
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main p {
+  min-width: 280px;
 }
 
 #home-icon {
