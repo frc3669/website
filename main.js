@@ -1,11 +1,16 @@
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    if (window.innerWidth >= 700) {
+      document.getElementById("main").style.marginLeft = "250px";
+    } else {
+      document.getElementById("main").style.marginLeft = "0";
+    }
 }
 
 function closeNav() {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+    console.log(window.screen.width);
 }
 
 function toggleNav() {
