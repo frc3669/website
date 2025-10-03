@@ -16,7 +16,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #111111;
+  background-color: rgba(17, 17, 17, 1);
   overflow-x: hidden;
   overflow-y: auto;
   padding-top: 20px;
